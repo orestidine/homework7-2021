@@ -45,10 +45,9 @@ document.querySelector("#mute").addEventListener("click", function() {
 		}
 });
 document.querySelector("#slider").addEventListener("change", function() {
-	video.volume = this.value / 100;
-	volume.innerHTML = this.value + "%";
-	console.log(this.value);
-	console.log(video.volume);
+	console.log("In Slider");
+	console.log(this.value)
+	document.querySelector("#volume").innerHTML=this.value;
 });
 document.querySelector("#vintage").addEventListener("click", function() {
 	video.classList.add("oldSchool");
