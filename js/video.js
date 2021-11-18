@@ -8,7 +8,8 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-	volume.innerHTML = "100%";
+	document.querySelector("#volume").innerHTML = video.volume*100 + "%";
+
 });
 document.querySelector("#pause").addEventListener("click", function() {
 	console.log("Pause Video");
@@ -46,8 +47,9 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("change", function() {
 	console.log("In Slider");
 	console.log(this.value);
-	video.volume = this.value/100;
-	document.querySelector("#volume").innerHTML=this.value + "%";
+	var slider = this.value
+	video.volume = slider/100;
+	document.querySelector("#volume").innerHTML=video.volume*100 + "%";
 });
 document.querySelector("#vintage").addEventListener("click", function() {
 	video.classList.add("oldSchool");
