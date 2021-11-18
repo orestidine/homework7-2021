@@ -31,7 +31,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 		video.currentTime = 0;
 		console.log("Skip Ahead");
 	}
-		video.play();
 		console.log(video.duration);
 		console.log("currentLocation"+video.currentTime);
 });
@@ -46,7 +45,8 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 document.querySelector("#slider").addEventListener("change", function() {
 	console.log("In Slider");
-	console.log(this.value)
+	console.log(this.value);
+	video.volume = this.value/100;
 	document.querySelector("#volume").innerHTML=this.value + "%";
 });
 document.querySelector("#vintage").addEventListener("click", function() {
